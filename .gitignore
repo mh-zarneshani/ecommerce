@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.qa-pg/
+*.log
+.env
+.env.*
+!.env.example
+data/
+*.sqlite*
+project-review.zip
+.qa-run-*/
+.venv-win311/

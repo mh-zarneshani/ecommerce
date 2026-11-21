@@ -1,0 +1,5 @@
+psycopg[binary]==3.3.9
+openpyxl==3.1.5
+streamlit==1.67.0
+pytest==9.2.0
+httpx==0.28.1
