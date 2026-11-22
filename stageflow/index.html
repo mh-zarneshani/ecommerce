@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اکتیو | میز عملیات ایکامرس</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
+    <symbol id="i-Package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+    <symbol id="i-Store" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></symbol>
+    <symbol id="i-ChartNoAxesCombined" viewBox="0 0 24 24"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></symbol>
+    <symbol id="i-FolderCheck" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="m9 13 2 2 4-4"/></symbol>
+  </svg>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="wordmark" href="#main">active<span>.</span></a>
+      <nav>
+        <a href="#main" data-label="overview"></a>
+        <a href="#performance" data-label="performance"></a>
+        <a href="#queue" data-label="queue"></a>
+      </nav>
+    </aside>
+    <main id="main" tabindex="-1">
+      <header class="topbar">
+        <span data-label="operations"></span>
+        <button id="language" type="button" lang="en">English</button>
+      </header>
+      <div class="content">
+        <h1 data-label="overview"></h1>
+        <form id="filters" class="filters" hidden>
+          <label><span data-label="account"></span><select id="account"></select></label>
+          <label><span data-label="source"></span><select id="dataset">
+            <option value="workbook" data-label="workbook"></option>
+            <option value="class-demo" data-label="demo"></option>
+          </select></label>
+          <fieldset id="cutoff">
+            <legend data-label="cutoff"></legend>
+            <label><span data-label="month"></span><select id="month"></select></label>
+            <label><span data-label="day"></span><select id="day"></select></label>
+            <label><span data-label="hour"></span><select id="hour"></select></label>
+          </fieldset>
+          <label id="overlay-filter" class="checkbox"><input id="overlay" type="checkbox"><span data-label="overlay"></span></label>
+        </form>
+        <div class="status-row">
+          <p id="status" role="status"></p>
+          <button id="retry" type="button" data-label="retry" hidden></button>
+          <a id="admin-link" href="/" data-label="salesDesk" hidden></a>
+        </div>
+        <div id="dashboard" hidden>
+          <section id="metrics" class="metrics" aria-labelledby="metrics-title">
+            <h2 id="metrics-title" class="sr-only" data-label="metrics"></h2>
+            <div id="metrics-data" class="metric-grid"></div>
+          </section>
+          <div class="dashboard-grid">
+            <section id="performance" class="panel" aria-labelledby="performance-title">
+              <h2 id="performance-title" data-label="performance"></h2>
+              <div id="account-performance"></div>
+            </section>
+            <section id="queue" class="panel" aria-labelledby="queue-title">
+              <h2 id="queue-title" data-label="queue"></h2>
+              <div id="cases"></div>
+              <a href="/" data-label="salesDesk"></a>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <dialog id="case-dialog" aria-labelledby="case-title">
+    <header>
+      <h2 id="case-title" data-label="caseTitle"></h2>
+      <form method="dialog"><button id="close-case" data-label="dismiss"></button></form>
+    </header>
+    <div class="dialog-body">
+      <p id="case-status" role="status"></p>
+      <div id="case-content"></div>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -580,7 +580,11 @@ class Handler(BaseHTTPRequestHandler):
             assets={'/':('frontend/index.html','text/html'),'/app.js':('frontend/app.js','text/javascript'),
                     '/assistant.js':('frontend/assistant.js','text/javascript'),
                     '/style.css':('frontend/style.css','text/css'),'/app.css':('frontend/app.css','text/css'),
-                    '/font.woff2':('static/Vazirmatn.woff2','font/woff2')}
+                    '/font.woff2':('static/Vazirmatn.woff2','font/woff2'),
+                    '/stageflow/':('stageflow/index.html','text/html'),
+                    '/stageflow/dashboard.js':('stageflow/dashboard.js','text/javascript'),
+                    '/stageflow/styles.css':('stageflow/styles.css','text/css'),
+                    '/stageflow/assets/Vazirmatn.woff2':('stageflow/assets/Vazirmatn.woff2','font/woff2')}
             if self.path not in assets:
                 raise WebError('صفحه پیدا نشد.',404)
             file,mime=assets[self.path]
